@@ -1,0 +1,725 @@
+/*
+    Table of Content
+
+    1.  Common CSS
+    2.  Header Section CSS
+        2.1 Navigation
+        2.2 Social-links
+        2.3 Logo
+        2.4 Menu
+    3.  Banner Section CSS
+    4.  Our-Work Section CSS
+    5.  Poster Section CSS
+    6.  Our-Services Section CSS
+        6.1 Service-box
+    7.  Footer Section CSS
+    8.  Media Query CSS
+*/
+/******************
+    Common CSS 
+    ******************/
+:root {
+  --red-color:#ed1f24;
+  --lr-padding: 10rem;
+  --big-size: 5rem;
+  --medium-size: 3.5rem;
+  --size: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'HelveticaNeue Condensed', sans-serif;
+  scroll-behavior: smooth;
+  text-transform: uppercase;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.flex-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0 var(--lr-padding);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover, a:focus {
+  color: var(--red-color);
+}
+
+.heading {
+  font-size: var(--medium-size);
+  position: relative;
+  padding: 1rem;
+}
+
+.heading::before, .heading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: var(--red-color);
+}
+
+.heading::before {
+  left: 0;
+  width: .7rem;
+  height: .7rem;
+  border-radius: 50%;
+}
+
+.heading::after {
+  left: 100%;
+  width: 100%;
+  height: .3rem;
+}
+
+/******************
+    Header Section CSS 
+    ******************/
+/* Navigation */
+.navigation {
+  width: 100%;
+  height: 10rem;
+  z-index: 9999;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  /* Social-links */
+  /* Logo */
+}
+
+.navigation .social-links {
+  position: absolute;
+  right: var(--lr-padding);
+  top: 1rem;
+}
+
+.navigation .social-links .links {
+  text-transform: lowercase;
+  margin-left: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.navigation .social-links .links:first-child {
+  margin-left: 0;
+}
+
+.navigation #toggle-btn {
+  display: none;
+}
+
+.navigation .logo {
+  width: 38rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigation .logo img {
+  width: 6rem;
+  height: 8rem;
+}
+
+.navigation .logo h1 {
+  font-size: var(--medium-size);
+  text-transform: uppercase;
+}
+
+.navigation .logo h1 span {
+  color: var(--red-color);
+}
+
+/* Menu */
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu .menu-item {
+  margin-left: 2rem;
+}
+
+.menu .menu-item:first-child {
+  margin-left: 0;
+}
+
+.menu .menu-item .menu-link {
+  text-transform: uppercase;
+  font-size: var(--size);
+  padding-left: 1rem;
+  display: inline-block;
+  position: relative;
+}
+
+.menu .menu-item .menu-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: .5rem;
+  height: .5rem;
+  background: var(--red-color);
+  border-radius: 50%;
+}
+
+/******************
+    Banner Section CSS 
+    ******************/
+.banner-section {
+  width: 100%;
+  height: calc(100vh - 10rem);
+  background: url("../img/banner.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.banner-section .banner-text {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  color: #fff;
+}
+
+.banner-section .banner-text h1 {
+  font-size: var(--big-size);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+}
+
+.banner-section .banner-text h1 span {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 100;
+}
+
+.banner-section .banner-text p {
+  text-transform: lowercase;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: var(--size);
+  margin: 1.5rem 0 3rem;
+}
+
+.banner-section .banner-text .banner-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--size);
+  border: .1rem solid #fff;
+  border-radius: 5rem;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  padding: .8rem 3.5rem;
+  background: transparent;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.banner-section .banner-text .banner-btn:hover {
+  color: #000;
+  background: var(--red-color);
+  border-color: var(--red-color);
+}
+
+/******************
+    Our-Work Section CSS 
+    ******************/
+.our-work {
+  padding: 4rem var(--lr-padding);
+}
+
+.our-work .owl-carousel {
+  top: 4rem;
+}
+
+.our-work .owl-carousel .item-video {
+  height: 30rem;
+}
+
+.our-work .owl-carousel #vid-2 {
+  height: 10rem;
+  margin-top: 10rem;
+}
+
+.our-work .owl-carousel #vid-4 {
+  height: 15rem;
+  margin-top: 7rem;
+}
+
+.our-work .owl-carousel .owl-nav {
+  display: block;
+  position: relative;
+  margin-top: 6rem;
+}
+
+.our-work .owl-carousel .owl-nav span {
+  display: none;
+}
+
+.our-work .owl-carousel .owl-nav .owl-prev {
+  position: absolute;
+  width: 100%;
+  height: var(--big-size);
+  pointer-events: none;
+  outline: none;
+}
+
+.our-work .owl-carousel .owl-nav .owl-prev::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f30b";
+  font-size: var(--big-size);
+  font-weight: 900;
+  position: absolute;
+  top: -50%;
+  right: 5%;
+  pointer-events: auto;
+}
+
+.our-work .owl-carousel .owl-nav .owl-next {
+  position: absolute;
+  width: 50%;
+  height: var(--big-size);
+  pointer-events: none;
+  outline: none;
+}
+
+.our-work .owl-carousel .owl-nav .owl-next::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f30a";
+  font-size: var(--big-size);
+  font-weight: 900;
+  position: absolute;
+  top: -50%;
+  left: 5%;
+  pointer-events: auto;
+}
+
+/******************
+    Poster Section CSS 
+    ******************/
+.poster-section {
+  width: 100%;
+  background: url("../img/poster.jpg") no-repeat center;
+  background-size: cover;
+  margin-top: 5rem;
+}
+
+.poster-section .poster-text {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5rem var(--lr-padding);
+  color: #fff;
+}
+
+.poster-section .poster-text .poster-logo {
+  width: 10.8rem;
+  height: 10.8rem;
+  position: relative;
+}
+
+.poster-section .poster-text .poster-logo .logo-circle {
+  width: 100%;
+  height: 100%;
+}
+
+.poster-section .poster-text .poster-logo .small-logo {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.poster-section .poster-text p {
+  text-transform: uppercase;
+  font-size: var(--medium-size);
+  padding: 2rem var(--lr-padding);
+  text-align: center;
+}
+
+.poster-section .poster-text .explore-btn {
+  display: inline-block;
+  background: var(--red-color);
+  font-size: var(--size);
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  padding: 1rem 2rem;
+  border: 0.1rem solid transparent;
+  border-right: 0.1rem solid #fff;
+  border-bottom: 0.1rem solid #fff;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.poster-section .poster-text .explore-btn:hover {
+  border-color: #fff;
+  background: transparent;
+}
+
+/******************
+    Our-Services Section CSS 
+    ******************/
+.our-services {
+  padding: 3rem var(--lr-padding);
+  /* Service-box */
+}
+
+.our-services p {
+  font-size: var(--size);
+  width: 100%;
+  padding: 1.5rem 0;
+}
+
+.our-services .service-link {
+  font-size: var(--size);
+}
+
+.our-services .service-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5rem 0;
+}
+
+.our-services .service-box .box-4, .our-services .service-box .box-5, .our-services .service-box .box-6 {
+  border-top: 0.1rem solid var(--red-color);
+  border-bottom: 0.1rem solid var(--red-color);
+}
+
+.our-services .service-box .box-2, .our-services .service-box .box-5, .our-services .service-box .box-8 {
+  border-left: 0.1rem solid var(--red-color);
+  border-right: 0.1rem solid var(--red-color);
+}
+
+.our-services .service-box .box:hover, .our-services .service-box .active {
+  background: var(--red-color);
+}
+
+.our-services .service-box .box:hover h1, .our-services .service-box .active h1 {
+  color: #fff;
+  word-break: break-all;
+}
+
+.our-services .service-box .box {
+  -ms-flex-preferred-size: 33%;
+      flex-basis: 33%;
+  overflow: hidden;
+}
+
+.our-services .service-box .box h1 {
+  font-size: 4rem;
+  position: relative;
+  padding: 3rem;
+  height: 100%;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  cursor: pointer;
+}
+
+.our-services .service-box .box h1::before {
+  content: "";
+  position: absolute;
+  top: 4rem;
+  left: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--red-color);
+  border-radius: 50%;
+}
+
+.our-services .service-box .box h1:hover {
+  background: var(--red-color);
+  color: #fff;
+}
+
+.our-services .service-box .box h1 span {
+  display: block;
+  font-size: var(--size);
+  font-weight: 100;
+  margin-top: 0;
+}
+
+/******************
+    Footer Section CSS 
+    ******************/
+.footer-section {
+  background: #f7f7f7;
+}
+
+.footer-section .flex-box {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem var(--lr-padding);
+}
+
+.footer-section a {
+  font-size: var(--size);
+  padding: .5rem;
+}
+
+.footer-section .pictures {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer-section .pictures .pic {
+  width: 27rem;
+  height: 27rem;
+  -ms-flex-preferred-size: 23%;
+      flex-basis: 23%;
+  margin: .2rem;
+  position: relative;
+}
+
+.footer-section .pictures .pic img {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.footer-section .pictures .pic .overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.footer-section .pictures .pic .overlay i {
+  font-size: var(--size);
+  color: #fff;
+  padding: 0 .5rem;
+}
+
+.footer-section .pictures .pic:hover img {
+  opacity: 0.8;
+}
+
+.footer-section .pictures .pic:hover .overlay {
+  opacity: 1;
+}
+
+.footer-section .copyright {
+  background: #000;
+  padding: 0.5rem var(--lr-padding);
+}
+
+.footer-section .copyright p {
+  font-size: var(--size);
+  color: #fff;
+}
+
+/******************
+    Media Query CSS 
+    ******************/
+@media (max-width: 991px) {
+  :root {
+    --lr-padding: 7.5rem;
+  }
+  html {
+    font-size: 58%;
+  }
+  /* Navigation */
+  .navigation #toggle-btn {
+    display: block;
+    font-size: var(--size);
+    padding: .5rem 1rem;
+    color: var(--red-color);
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  .menu {
+    -webkit-transition: all 0.3s cubic-bezier(0.38, 1.15, 0.7, 1.12);
+    transition: all 0.3s cubic-bezier(0.38, 1.15, 0.7, 1.12);
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .menu .menu-item {
+    margin-left: 0;
+  }
+  .menu .menu-item .menu-link {
+    margin: 1rem 0;
+  }
+  .menu-toggle {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    opacity: 1;
+  }
+  .poster-section .poster-text p {
+    padding: 2rem 0;
+  }
+  .our-services .service-box .box {
+    border: 0;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+  .our-services .service-box .box-1, .our-services .service-box .box-3, .our-services .service-box .box-5, .our-services .service-box .box-7 {
+    border-right: 0.1rem solid var(--red-color);
+  }
+  .our-services .service-box .box-3, .our-services .service-box .box-4 {
+    border-top: 0.1rem solid var(--red-color);
+    border-bottom: 0.1rem solid var(--red-color);
+  }
+  .our-services .service-box .box-5, .our-services .service-box .box-6 {
+    border-bottom: 0.1rem solid var(--red-color);
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --lr-padding: 5rem;
+    --big-size: 4rem;
+    --medium-size: 3rem;
+    --size: 1.7rem;
+  }
+  html {
+    font-size: 55%;
+  }
+  .footer-section .pictures .pic {
+    width: 20rem;
+    height: 20rem;
+    -ms-flex-preferred-size: unset;
+        flex-basis: unset;
+    margin: .2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --lr-padding: 3rem;
+    --big-size: 3rem;
+    --medium-size: 2rem;
+    --size: 1.5rem;
+  }
+  html {
+    font-size: 50%;
+  }
+  .navigation .social-links {
+    display: none;
+  }
+  .navigation .logo {
+    width: 27rem;
+  }
+  .our-services .service-box .box {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    border: 0;
+  }
+  .our-services .service-box .box-2, .our-services .service-box .box-4, .our-services .service-box .box-6, .our-services .service-box .box-8 {
+    border-top: 0.1rem solid var(--red-color);
+    border-bottom: 0.1rem solid var(--red-color);
+  }
+  .footer-section .pictures .pic {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin: 0.2rem 0;
+  }
+  .footer-section .copyright {
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=style.css.map */
